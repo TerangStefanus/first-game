@@ -17,7 +17,7 @@ public class Dropper : MonoBehaviour
         if ( Time.time < timeToWait)
         {
             Debug.Log(" 3 Second has elapsed");
-            GetComponent<RigidBody>().usegravity = on;
+            // GetComponent<RigidBody>().usegravity = on;
         }
         
     }
