@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
-    MeshRenderer invisible;
-    [SerializeField] float timeToWait = 5f;
+    // Cache Reference 
+    MeshRenderer invisible; // actually u can say this MeshRenderer renderer
+    Rigidbody graivity;// same case u can say this Rigidbody rigidbody
+
+    [SerializeField] float timeToWait = 10f;
 
     void Start()
     {
         invisible = GetComponent<MeshRenderer>();
         invisible.enabled = false;
+
+        graivity = GetComponent<Rigidbody>();
+        graivity.useGravity = false;
     }
 
     // Update is called once per frame
@@ -19,6 +25,8 @@ public class Dropper : MonoBehaviour
         if ( Time.time < timeToWait)
         {
             Debug.Log(" 3 Second has elapsed");
+            invisible.enabled = true;
+            graivity.useGravity = true;
         }
         
     }
