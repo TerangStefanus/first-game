@@ -8,15 +8,17 @@ public class Dropper : MonoBehaviour
     MeshRenderer invisible; // actually u can say this MeshRenderer renderer
     Rigidbody graivity;// same case u can say this Rigidbody rigidbody
 
-    [SerializeField] float timeToWait = 10f;
+    [SerializeField] float timeToWait = 100000f;
 
     void Start()
     {
-        invisible = GetComponent<MeshRenderer>();
-        invisible.enabled = false;
-
         graivity = GetComponent<Rigidbody>();
+        invisible = GetComponent<MeshRenderer>();
+
+        invisible.enabled = false;
+        Debug.Log("Hilang");
         graivity.useGravity = false;
+        Debug.Log("Gada Gravitasi");
     }
 
     // Update is called once per frame
@@ -25,8 +27,10 @@ public class Dropper : MonoBehaviour
         if ( Time.time < timeToWait)
         {
             Debug.Log(" 3 Second has elapsed");
-            invisible.enabled = true;
-            graivity.useGravity = true;
+            // invisible.enabled = true;
+            // Debug.Log("Kelihatan bang");
+            // graivity.useGravity = true;
+            // Debug.Log("jatuh dahh ajg");
         }
         
     }
