@@ -26,12 +26,12 @@ public class Dropper : MonoBehaviour
     {
         if ( Time.time < timeToWait)
         {
-            Debug.Log(" 3 Second has elapsed");
-            // invisible.enabled = true;
-            // Debug.Log("Kelihatan bang");
+            // Debug.Log(" 3 Second has elapsed");
+            
+            invisible.enabled = true ;
+            Debug.Log("Kelihatan bang");
             // graivity.useGravity = true;
             // Debug.Log("jatuh dahh ajg");
         }
-        
     }
 }
